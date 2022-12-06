@@ -8,7 +8,9 @@ import { AuthService } from '../../../auth/services/auth.service';
   templateUrl: './home.component.html',
   styles: [`
   .container{
-    margin:10px;
+    margin:20px;
+    width:100%;
+    height:100%;
   }
   `]
 })

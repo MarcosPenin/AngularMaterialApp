@@ -16,6 +16,7 @@ import { RoomCardComponent } from './components/room-card/room-card.component';
 import { RoomPicPipe } from './pipes/roomPic.pipe';
 import { NoroomsdialogComponent } from './components/noroomsdialog/noroomsdialog.component';
 import { BookigcompleteComponent } from './components/bookingcomplete/bookingcomplete.component';
+import { MapComponent } from './pages/map/map.component';
 
 
 
@@ -33,7 +34,8 @@ import { BookigcompleteComponent } from './components/bookingcomplete/bookingcom
     ConfirmarComponent,
     RoomCardComponent,
     NoroomsdialogComponent,
-    BookigcompleteComponent
+    BookigcompleteComponent,
+    MapComponent
   
   ],
   imports: [

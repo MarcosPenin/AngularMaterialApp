@@ -25,6 +25,7 @@ import {MatSliderModule} from '@angular/material/slider';
     MatCardModule,
     MatDatepickerModule,
     MatDialogModule,
+    MatGridListModule,
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,

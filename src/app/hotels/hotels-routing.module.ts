@@ -5,6 +5,7 @@ import { ListadoComponent } from './pages/listado/listado.component';
 import { RoomSearchComponent } from './pages/roomSearch/room-search.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { MapComponent } from './pages/map/map.component';
 
 
 
@@ -22,8 +23,8 @@ const routes:Routes=[
         component:RoomSearchComponent
       },
       {
-        path:"buscar",
-        component:BuscarComponent
+        path:"map",
+        component:MapComponent
       },
       {
         path:"**",
