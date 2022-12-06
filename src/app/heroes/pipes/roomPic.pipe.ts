@@ -1,6 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Heroe } from '../interfaces/heroes.interface';
-import { Hotel } from '../interfaces/hotels.interface';
 import { BookingPreview } from '../interfaces/bookings.interfaces';
 
 @Pipe({ 

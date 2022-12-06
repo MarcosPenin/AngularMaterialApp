@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-bookigcomplete',
-  templateUrl: './bookigcomplete.component.html',
-  styleUrls: ['./bookigcomplete.component.css']
+  templateUrl: './bookingcomplete.component.html'
 })
 export class BookigcompleteComponent implements OnInit {
 
@@ -11,5 +10,8 @@ export class BookigcompleteComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+
 
 }

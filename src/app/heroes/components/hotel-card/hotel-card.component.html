@@ -6,8 +6,8 @@
     <img mat-card-image [src]="hotel | imagen">
    
     <mat-card-actions>
-        <button mat-raised-button color="accent" [routerLink]="['/heroes/editar',hotel.idHotel]">Reservar</button>
-        <button mat-raised-button color="secondary" [routerLink]="['/heroes/editar',hotel.idHotel]">Leer más</button>
+        <button mat-raised-button color="accent" [routerLink]="['/hotels/roomSearch',hotel.idHotel]">Reservar</button>
+        <button mat-raised-button color="secondary" [routerLink]="['/hotels/roomSearch',hotel.idHotel]">Leer más</button>
     </mat-card-actions>
     <mat-card-content>
         <p align="justify">

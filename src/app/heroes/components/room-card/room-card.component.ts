@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Hotel } from '../../interfaces/hotels.interface';
 import { BookingPreview, BookingRequest, RoomSearch } from '../../interfaces/bookings.interfaces';
-import { HeroesService } from '../../services/heroes.service';
+import { HotelsService } from '../../services/hotels.service';
 import { MatDialog } from '@angular/material/dialog';
-import { BookigcompleteComponent } from '../bookigcomplete/bookigcomplete.component';
+import { BookigcompleteComponent } from '../bookingcomplete/bookingcomplete.component';
 
 @Component({
   selector: 'app-room-card',
@@ -20,7 +20,7 @@ export class RoomCardComponent  {
   @Input() roomSearch!: RoomSearch;
 
   
-  constructor(private dialog:MatDialog, private heroesService: HeroesService) { }
+  constructor(private dialog:MatDialog, private heroesService: HotelsService) { }
 
   book(){
 

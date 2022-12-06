@@ -1,25 +1,24 @@
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Heroe } from '../interfaces/heroes.interface';
 import { environment } from '../../../environments/environment';
 import { Hotel } from '../interfaces/hotels.interface';
-import { BookingPreview, RoomSearch, BookingRequest, Booking } from '../interfaces/bookings.interfaces';
+import { BookingPreview, RoomSearch, BookingRequest } from '../interfaces/bookings.interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HeroesService {
+export class HotelsService {
 
   private baseUrl: string = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
-  getHeroes(): Observable<Hotel[]> {
+  getHotels(): Observable<Hotel[]> {
     return this.http.get<Hotel[]>(`${this.baseUrl}/hotels`)
   }
 
-  getHeroePorId(id: number): Observable<Hotel> {
+  getHotelById(id: number): Observable<Hotel> {
     return this.http.get<Hotel>(`${this.baseUrl}/hotels/${id}`)
   }
 
@@ -33,23 +32,6 @@ export class HeroesService {
     return this.http.post(`${this.baseUrl}/bookings`, bookingRequest).subscribe(
       
 )
-
-
   }
-
-
-  agregarHeroe(heroe: Heroe): Observable<Heroe> {
-    return this.http.post<Heroe>(`${this.baseUrl}/heroes`, heroe)
-  }
-
-  actualizarHeroe(heroe: Heroe): Observable<Heroe> {
-    return this.http.put<Heroe>(`${this.baseUrl}/heroes/${heroe.id}`, heroe)
-  }
-
-  borrarHeroe(id: String): Observable<any> {
-    return this.http.delete<any>(`${this.baseUrl}/heroes/${id}`)
-  }
-
-
 
 }
