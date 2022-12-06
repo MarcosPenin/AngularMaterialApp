@@ -1,0 +1,21 @@
+<mat-card >
+    <mat-card-header>
+        <mat-card-title>{{bookingPreview.rtmName}}</mat-card-title>
+        <mat-card-subtitle>Number: {{bookingPreview.rmNumber}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="bookingPreview | roomPic">
+   
+    <mat-card-actions>
+        <button mat-raised-button color="accent" (click)="book()">Reservar</button>
+    
+    </mat-card-actions>
+    <mat-card-content>
+        <p align="justify">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.         
+        </p>
+        <p>Precio por noche: {{bookingPreview.nightPrice}}</p>
+        <p>Precio total: {{bookingPreview.bookingPrice}}</p>
+    
+    </mat-card-content>
+    
+</mat-card>

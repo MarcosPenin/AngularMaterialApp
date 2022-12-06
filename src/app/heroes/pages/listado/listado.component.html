@@ -1,16 +1,10 @@
-<h1>Listado de Héroes</h1>
+
+ <img mat-card-image src="assets/hotels/FN Logo.png">
 <mat-divider></mat-divider>
 <br>
 
 <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="20px">
-    <div fxFlex="20" fxFlex.lg="15" fxFlex.sm="30"  *ngFor="let heroe of heroes">
-        <app-heroe-tarjeta [heroe]="heroe"></app-heroe-tarjeta>
+    <div fxFlex="30" *ngFor="let hotel of hotels">
+        <app-heroe-tarjeta [hotel]="hotel"></app-heroe-tarjeta>
     </div>
-
- 
 </div>
-
-
-
-
-

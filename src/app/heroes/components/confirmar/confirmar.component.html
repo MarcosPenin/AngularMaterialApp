@@ -1,11 +1,5 @@
-<h1>¿Está seguro?</h1>
-<hr>
-<p>
-    Está a punto de borrar a {{data.superhero}}}
-    <br>
-    ¿Desea continuar?
-</p>
-<div>
-    <button mat-button (click)="borrar()" color="warn">Sí, borrar!</button>
-    <button mat-button (click)="cerrar()">Cancelar</button>
+<h1 mat-dialog-title>Fecha inválida</h1>
+<div mat-dialog-content>Las fechas no pueden ser anteriores a la actual</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="warn" mat-dialog-close>Aceptar</button>
 </div>

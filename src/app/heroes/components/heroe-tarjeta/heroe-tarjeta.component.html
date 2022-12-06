@@ -1,21 +1,20 @@
 <mat-card >
     <mat-card-header>
-        <mat-card-title>{{heroe.superhero}}</mat-card-title>
-        <mat-card-subtitle>{{heroe.alter_ego}}</mat-card-subtitle>
+        <mat-card-title >{{hotel.htlName}}</mat-card-title>
+        <mat-card-subtitle>{{hotel.htlEmail}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="heroe | imagen">
+    <img mat-card-image [src]="hotel | imagen">
+   
+    <mat-card-actions>
+        <button mat-raised-button color="accent" [routerLink]="['/heroes/editar',hotel.idHotel]">Reservar</button>
+        <button mat-raised-button color="secondary" [routerLink]="['/heroes/editar',hotel.idHotel]">Leer más</button>
+    </mat-card-actions>
     <mat-card-content>
-        <h3>{{heroe.publisher}}</h3>
-        <p>
-            <strong>Primera aparición: </strong>{{heroe.first_appearance}}
-            <br>
-            <strong>Personajes: </strong>{{heroe.characters}}
+        <p align="justify">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.         
         </p>
     
     </mat-card-content>
-    <mat-card-actions>
-        <button mat-button color="warn" [routerLink]="['/heroes',heroe.id]">Leer más</button>
-        <button mat-button color="info" [routerLink]="['/heroes/editar',heroe.id]">Editar</button>
-    </mat-card-actions>
+
     
 </mat-card>

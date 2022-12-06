@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Heroe } from '../../interfaces/heroes.interface';
+import { Hotel } from '../../interfaces/hotels.interface';
 
 @Component({
   selector: 'app-heroe-tarjeta',
@@ -12,6 +13,7 @@ import { Heroe } from '../../interfaces/heroes.interface';
 })
 export class HeroeTarjetaComponent {
 
-  @Input() heroe!: Heroe;
+  @Input() hotel!: Hotel;
+
 
 }

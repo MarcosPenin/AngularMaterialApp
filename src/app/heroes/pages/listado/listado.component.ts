@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Heroe } from '../../interfaces/heroes.interface';
+import { Hotel } from '../../interfaces/hotels.interface';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
@@ -15,7 +16,7 @@ import { HeroesService } from '../../services/heroes.service';
 })
 export class ListadoComponent implements OnInit {
 
-  heroes: Heroe[] = []
+  hotels: Hotel[] = []
 
   constructor(private heroesService: HeroesService) { }
 
@@ -23,7 +24,9 @@ export class ListadoComponent implements OnInit {
 
     this.heroesService.getHeroes().
       subscribe(resp =>
-        this.heroes = resp)
+        this.hotels = resp
+        )
+        console.log(this.hotels)
   }
 
 }

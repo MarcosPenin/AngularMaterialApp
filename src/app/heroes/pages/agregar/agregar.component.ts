@@ -6,6 +6,13 @@ import { switchMap } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmarComponent } from '../../components/confirmar/confirmar.component';
+import { FormControl, FormGroup } from '@angular/forms';
+import { MatSliderChange } from '@angular/material/slider';
+import { Hotel } from '../../interfaces/hotels.interface';
+import { RoomSearch, BookingPreview } from '../../interfaces/bookings.interfaces';
+import { HttpParams } from '@angular/common/http';
+import { NoroomsdialogComponent } from '../../components/noroomsdialog/noroomsdialog.component';
+
 
 
 @Component({
@@ -20,6 +27,21 @@ import { ConfirmarComponent } from '../../components/confirmar/confirmar.compone
 })
 export class AgregarComponent implements OnInit {
 
+  bookingPreviews: BookingPreview[] = []
+  idHotel: number = 0;
+
+  params: any;
+
+  range = new FormGroup({
+    start: new FormControl<Date | null>(null),
+    end: new FormControl<Date | null>(null),
+  });
+
+  maxPrice: number = 300;
+
+   roomSearch!: RoomSearch;
+    
+
   heroe: Heroe = {
     superhero: "",
     alter_ego: "",
@@ -28,6 +50,8 @@ export class AgregarComponent implements OnInit {
     publisher: Publisher.DCComics,
     alt_image: ""
   }
+
+  hotel!: Hotel;
 
   publishers = [
     {
@@ -46,16 +70,16 @@ export class AgregarComponent implements OnInit {
     private router: Router,
     private snackbar: MatSnackBar,
     private dialog: MatDialog) { }
+
   ngOnInit(): void {
-
-    if (this.router.url.includes('editar')) {
-      this.activatedRoute.params
-        .pipe(switchMap(({ id }) => this.heroesService.getHeroePorId(id))
-        ).subscribe(heroe => this.heroe = heroe)
-    }
-
+    this.activatedRoute.params
+      .pipe(switchMap(({ id }) =>
+        this.heroesService.getHeroePorId(id))
+      ).subscribe(hotel => this.hotel = hotel)
+    console.log(this.hotel)
 
   }
+
 
   guardar() {
     if (this.heroe.superhero.trim().length !== 0) {
@@ -69,9 +93,33 @@ export class AgregarComponent implements OnInit {
         })
 
       }
-
     }
   }
+
+  buscar() {
+   
+     this.roomSearch = {
+      idHotel: this.hotel.idHotel,
+      checkIn: this.range.value.start!,
+      checkOut: this.range.value.end!,
+      maxPrice: this.maxPrice
+    }
+
+    const date = new Date();
+
+    if (this.roomSearch.checkIn < date) {
+      const dialog = this.dialog.open(ConfirmarComponent, {
+        width: "550px"
+      })
+    } else {
+      this.heroesService.searchAvailableRooms(this.roomSearch).
+        subscribe(resp => this.bookingPreviews = resp)
+    }
+   
+  }
+
+
+
 
   borrarHeroe() {
 
@@ -80,15 +128,15 @@ export class AgregarComponent implements OnInit {
       data: this.heroe
     })
 
-    dialog.afterClosed().subscribe((result)=>{
-      if(result){
+    dialog.afterClosed().subscribe((result) => {
+      if (result) {
         this.heroesService.borrarHeroe(this.heroe.id!).subscribe(resp => {
           this.router.navigate(['/heroes'])
         })
       }
     })
 
-   
+
   }
 
   mostrarSnackbar(mensaje: string) {
@@ -96,4 +144,10 @@ export class AgregarComponent implements OnInit {
       duration: 2500
     })
   }
+
+  onInputChange(event: MatSliderChange) {
+    this.maxPrice = event.value!;
+    console.log(this.maxPrice);
+  }
+
 }

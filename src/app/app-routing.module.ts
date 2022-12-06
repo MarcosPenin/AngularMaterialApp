@@ -13,9 +13,7 @@ const routes:Routes=[
   },
   {
     path:"heroes",
-    loadChildren:()=>import("./heroes/heroes.module").then(m=>m.HeroesModule),
-    canLoad:[AuthGuard],
-    canActivate:[AuthGuard]
+    loadChildren:()=>import("./heroes/heroes.module").then(m=>m.HeroesModule)
   },
   {
     path:"404",

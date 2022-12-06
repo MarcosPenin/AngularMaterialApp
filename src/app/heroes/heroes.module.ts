@@ -10,8 +10,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmarComponent } from './components/confirmar/confirmar.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { RoomCardComponent } from './components/room-card/room-card.component';
+import { RoomPicPipe } from './pipes/roomPic.pipe';
+import { NoroomsdialogComponent } from './components/noroomsdialog/noroomsdialog.component';
+import { BookigcompleteComponent } from './components/bookigcomplete/bookigcomplete.component';
+
 
 
 
@@ -23,8 +29,13 @@ import { ConfirmarComponent } from './components/confirmar/confirmar.component';
     HomeComponent,
     ListadoComponent,
     HeroeTarjetaComponent,
+    RoomCardComponent,
     ImagenPipe,
-    ConfirmarComponent
+    RoomPicPipe,
+    ConfirmarComponent,
+    RoomCardComponent,
+    NoroomsdialogComponent,
+    BookigcompleteComponent
   
   ],
   imports: [
@@ -32,7 +43,9 @@ import { ConfirmarComponent } from './components/confirmar/confirmar.component';
     HeroesRoutingModule,
     FlexLayoutModule,
     MaterialModule,
-    FormsModule
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule,
 
   ]
 })

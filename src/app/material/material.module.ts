@@ -13,6 +13,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSliderModule} from '@angular/material/slider';
 
 
 
@@ -21,6 +23,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatAutocompleteModule,
     MatButtonModule,
     MatCardModule,
+    MatDatepickerModule,
     MatDialogModule,
     MatIconModule,
     MatInputModule,
@@ -30,6 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatProgressSpinnerModule,
     MatSelectModule,
     MatSidenavModule,
+    MatSliderModule,
     MatSnackBarModule,
     MatToolbarModule
   ]

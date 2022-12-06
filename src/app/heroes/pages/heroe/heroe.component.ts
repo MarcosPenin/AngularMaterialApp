@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Heroe } from '../../interfaces/heroes.interface';
+import { Hotel } from '../../interfaces/hotels.interface';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
@@ -18,6 +19,8 @@ export class HeroeComponent implements OnInit {
 
   heroe!: Heroe;
 
+  hotel!: Hotel;
+
   constructor(
     private activatedRoute: ActivatedRoute, 
     private heroesService: HeroesService,
@@ -28,7 +31,8 @@ export class HeroeComponent implements OnInit {
       .pipe(
         switchMap(({ id }) => this.heroesService.getHeroePorId(id))
       )
-      .subscribe(heroe => this.heroe = heroe);
+      .subscribe(hotel => this.hotel = hotel);
+     
 
   }
 
