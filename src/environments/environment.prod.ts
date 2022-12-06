@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl:'https://heroesapp.com/api'
+  baseUrl:'https://hotelsapp.com/api'
 };

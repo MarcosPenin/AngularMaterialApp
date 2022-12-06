@@ -20,7 +20,7 @@ export class RoomCardComponent  {
   @Input() roomSearch!: RoomSearch;
 
   
-  constructor(private dialog:MatDialog, private heroesService: HotelsService) { }
+  constructor(private dialog:MatDialog, private hotelsService: HotelsService) { }
 
   book(){
 
@@ -32,7 +32,7 @@ export class RoomCardComponent  {
 
    };
     
-    this.heroesService.addBooking(bookingRequest)
+    this.hotelsService.addBooking(bookingRequest)
 
     const dialog = this.dialog.open(BookigcompleteComponent, {
       width: "550px"

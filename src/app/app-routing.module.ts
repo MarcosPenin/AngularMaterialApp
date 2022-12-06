@@ -12,7 +12,7 @@ const routes:Routes=[
   },
   {
     path:"hotels",
-    loadChildren:()=>import("./heroes/heroes.module").then(m=>m.HeroesModule)
+    loadChildren:()=>import("./hotels/hotels.module").then(m=>m.HotelsModule)
   },
   {
     path:"404",

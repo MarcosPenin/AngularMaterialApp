@@ -17,11 +17,11 @@ export class ListadoComponent implements OnInit {
 
   hotels: Hotel[] = []
 
-  constructor(private heroesService: HotelsService) { }
+  constructor(private hotelsService: HotelsService) { }
 
   ngOnInit(): void {
 
-    this.heroesService.getHotels().
+    this.hotelsService.getHotels().
       subscribe(resp =>
         this.hotels = resp
         )

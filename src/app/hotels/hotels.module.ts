@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RoomSearchComponent } from './pages/roomSearch/room-search.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { ListadoComponent } from './pages/listado/listado.component';
-import { HeroesRoutingModule } from './heroes-routing.module';
+import { HotelsRoutingModule } from './hotels-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
@@ -38,7 +38,7 @@ import { BookigcompleteComponent } from './components/bookingcomplete/bookingcom
   ],
   imports: [
     CommonModule,
-    HeroesRoutingModule,
+    HotelsRoutingModule,
     FlexLayoutModule,
     MaterialModule,
     MatNativeDateModule,
@@ -47,4 +47,4 @@ import { BookigcompleteComponent } from './components/bookingcomplete/bookingcom
 
   ]
 })
-export class HeroesModule { }
+export class HotelsModule { }

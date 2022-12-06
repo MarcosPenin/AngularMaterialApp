@@ -18,7 +18,7 @@ export class LoginComponent {
         console.log(resp);
 
         if ( resp.id ) {
-          this.router.navigate(['./heroes']);
+          this.router.navigate(['./hotels']);
         }
       })
   }

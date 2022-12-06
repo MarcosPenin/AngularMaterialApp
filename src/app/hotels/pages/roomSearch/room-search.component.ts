@@ -42,7 +42,7 @@ export class RoomSearchComponent implements OnInit {
 
 
   constructor(
-    private heroesService: HotelsService,
+    private hotelsService: HotelsService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private snackbar: MatSnackBar,
@@ -51,7 +51,7 @@ export class RoomSearchComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params
       .pipe(switchMap(({ id }) =>
-        this.heroesService.getHotelById(id))
+        this.hotelsService.getHotelById(id))
       ).subscribe(hotel => this.hotel = hotel)
     console.log(this.hotel)
 
@@ -74,7 +74,7 @@ export class RoomSearchComponent implements OnInit {
         width: "550px"
       })
     } else {
-      this.heroesService.searchAvailableRooms(this.roomSearch).
+      this.hotelsService.searchAvailableRooms(this.roomSearch).
         subscribe(resp => this.bookingPreviews = resp)
     }
    

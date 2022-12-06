@@ -17,7 +17,11 @@
                 <mat-icon mat-list-icon>map</mat-icon>
                 <span>Ver mapa</span>
             </a>
-            <a routerLink="./buscar" mat-list-item (click)="sidenav.toggle()">
+            <a routerLink="./client-area" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>supervisor_account</mat-icon>
+                <span>Mi cuenta</span>
+            </a>
+            <a routerLink="./about" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>help</mat-icon>
                 <span>Sobre nosotros</span>
             </a>
@@ -32,6 +36,10 @@
         </button>
         <span class="spacer"></span>
         <span>{{auth.usuario}}</span>
+
+        <button mat-button>
+            Mi cuenta
+        </button>
 
         <button mat-button (click)="logout()">
             Logout
